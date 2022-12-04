@@ -16,24 +16,24 @@ const routes: Routes = [
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'contratame',
-    loadChildren: () => import('./contratame/contratame.module').then( m => m.ContratamePageModule)
+    path: 'historia',
+    loadChildren: () => import('./historia/historia.module').then( m => m.HistoriaPageModule)
   },
   {
-    path: 'genero',
-    loadChildren: () => import('./genero/genero.module').then( m => m.GeneroPageModule)
+    path: 'servicios',
+    loadChildren: () => import('./servicios/servicios.module').then( m => m.ServiciosPageModule)
   },
   {
-    path: 'edad',
-    loadChildren: () => import('./edad/edad.module').then( m => m.EdadPageModule)
+    path: 'noticias',
+    loadChildren: () => import('./noticias/noticias.module').then( m => m.NoticiasPageModule)
   },
   {
-    path: 'uni',
-    loadChildren: () => import('./uni/uni.module').then( m => m.UniPageModule)
+    path: 'videos',
+    loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
   },
   {
-    path: 'clima',
-    loadChildren: () => import('./clima/clima.module').then( m => m.ClimaPageModule)
+    path: 'albergues',
+    loadChildren: () => import('./albergues/albergues.module').then( m => m.AlberguesPageModule)
   }
 ];
 

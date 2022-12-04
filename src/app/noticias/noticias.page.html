@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <h4>Noticias de la Defensa Civil: </h4>
+  <ion-item *ngFor="let item of resultado">
+    <div align="justify">
+    <br><br>
+    {{item.titulo}}
+    <br><br>
+    {{item.contenido}}
+    <br><br>
+    <div align="center">
+    <img style="width: 80%; margin:0 auto; max-width: 400px;" src={{item.foto}}>
+    </div>
+    </div>
+  </ion-item>
+  </ion-list>
+</ion-content>

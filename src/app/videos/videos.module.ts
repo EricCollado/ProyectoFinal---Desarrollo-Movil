@@ -4,21 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { InicioPageRoutingModule } from './inicio-routing.module';
+import { VideosPageRoutingModule } from './videos-routing.module';
 
-import { InicioPage } from './inicio.page';
-
-import { SwiperModule } from 'swiper/angular';
-
+import { VideosPage } from './videos.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule,
-    SwiperModule
+    VideosPageRoutingModule
   ],
-  declarations: [InicioPage]
+  declarations: [VideosPage]
 })
-export class InicioPageModule {}
+export class VideosPageModule {}

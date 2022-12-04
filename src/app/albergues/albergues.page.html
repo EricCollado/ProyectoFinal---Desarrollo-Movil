@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Albergues</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4>Albergues de la Defensa Civil: </h4>
+  <div>
+  <ion-item *ngFor="let item of resultado">
+  <ion-button (click)="setPowder(true)" expand="block">{{item.edificio}}</ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+              {{item.edificio}}
+            <ion-buttons slot="end">
+              <ion-button (click)="setPowder(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+         {{item.ciudad}}
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+    </ion-item>
+  </div>
+  <!-- <ion-list>
+    <div align="justify">
+    <br><br>
+    {{item.titulo}}
+    <br><br>
+    {{item.contenido}}
+    <br><br>
+    <div align="center">
+    <img style="width: 80%; margin:0 auto; max-width: 400px;" src={{item.foto}}>
+    </div>
+    </div>
+  </ion-item>
+  </ion-list> -->
+</ion-content>
