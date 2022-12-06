@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class VideosApiService {
+export class MiembrosApiService {
   constructor(public _http: HttpClient) { }
 
-  getVideos(){
-    return this._http.get('https://cors-anywhere.herokuapp.com/https://adamix.net/defensa_civil/def/videos.php');
+  getMemb(){
+    return this._http.get('https://cors-anywhere.herokuapp.com/https://adamix.net/defensa_civil/def/miembros.php');
   }
 }

@@ -10,8 +10,15 @@
 <ion-content>
   <h4>Albergues de la Defensa Civil: </h4>
   <div>
+
+  <script>
+
+
+  </script>
+
   <ion-item *ngFor="let item of resultado">
-  <ion-button (click)="setPowder(true)" expand="block">{{item.edificio}}</ion-button>
+
+  <ion-card (click)="setPowder(true)" expand="block">{{item.edificio}}</ion-card>
     <ion-modal [isOpen]="isModalOpen">
       <ng-template>
         <ion-header>
@@ -27,6 +34,7 @@
         </ion-content>
       </ng-template>
     </ion-modal>
+
     </ion-item>
   </div>
   <!-- <ion-list>

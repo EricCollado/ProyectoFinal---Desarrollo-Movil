@@ -10,6 +10,6 @@ export class NoticiasApiService {
   constructor(public _http: HttpClient) { }
 
   getNotis(){
-    return this._http.get('https://adamix.net/defensa_civil/def/noticias.php');
+    return this._http.get('https://cors-anywhere.herokuapp.com/https://adamix.net/defensa_civil/def/noticias.php');
   }
 }

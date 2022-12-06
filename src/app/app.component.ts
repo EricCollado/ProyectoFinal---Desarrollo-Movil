@@ -12,6 +12,9 @@ export class AppComponent {
     { title: 'Noticias', url: '/noticias', icon: 'newspaper'},
     { title: 'Videos', url: '/videos', icon: 'videocam'},
     { title: 'Albergues', url: '/albergues', icon: 'home'},
+    { title: 'Mapa', url: '/mapa', icon: 'map'},
+    { title: 'Medidas', url: '/medidas', icon: 'list'},
+    { title: 'Miembros', url: '/miembros', icon: 'people'},
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}

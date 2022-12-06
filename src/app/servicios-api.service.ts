@@ -12,6 +12,6 @@ export class ServiciosApiService {
   constructor(public _http: HttpClient) { }
 
   getServis(){
-    return this._http.get('https://adamix.net/defensa_civil/def/servicios.php');
+    return this._http.get('https://cors-anywhere.herokuapp.com/https://adamix.net/defensa_civil/def/servicios.php');
   }
 }
