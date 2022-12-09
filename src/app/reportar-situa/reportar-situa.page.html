@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref="nuevo-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reportar Situación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <h4> Rellene los siguientes datos: </h4>
+
+    <form [formGroup]="situaForm" (keyup.enter)="todos()">
+    <ion-item>
+     <ion-label position="floating">Título</ion-label>
+     <ion-input formControlName='titulo' [(ngModel)] = 'titulo'></ion-input>
+   </ion-item>
+
+   <ion-item>
+     <ion-label position="floating">Descripción</ion-label>
+     <ion-input formControlName='descripcion' [(ngModel)] = 'descripcion'></ion-input>
+   </ion-item>
+
+   <!-- <ion-item>
+     <ion-label position="floating">Foto</ion-label>
+     <ion-input formControlName='apellido' [(ngModel)] = 'apellido'></ion-input>
+   </ion-item> -->
+
+   <ion-item>
+     <ion-label position="floating">Latitud</ion-label>
+     <ion-input formControlName='latitud' [(ngModel)] = 'latitud'></ion-input>
+   </ion-item>
+
+   <ion-item>
+     <ion-label position="floating">Longitud</ion-label>
+     <ion-input formControlName='longitud' [(ngModel)] = 'longitud'></ion-input>
+   </ion-item>
+
+   <ion-button (click)="guardar()" expand="block">Guardar</ion-button>
+ </form>
+ </ion-list>
+   <br><br>
+</ion-content>

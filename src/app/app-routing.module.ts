@@ -46,7 +46,39 @@ const routes: Routes = [
   {
     path: 'medidas',
     loadChildren: () => import('./medidas/medidas.module').then( m => m.MedidasPageModule)
-  }
+  },
+  {
+    path: 'voluntario',
+    loadChildren: () => import('./voluntario/voluntario.module').then( m => m.VoluntarioPageModule)
+  },
+  {
+    path: 'sitios/:codigo',
+    loadChildren: () => import('./sitios/sitios.module').then( m => m.SitiosPageModule)
+  },
+  {
+    path: 'preventivas/:id',
+    loadChildren: () => import('./preventivas/preventivas.module').then( m => m.PreventivasPageModule)
+  },
+  {
+    path: 'acerca-de',
+    loadChildren: () => import('./acerca-de/acerca-de.module').then( m => m.AcercaDePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'recuperar',
+    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },
+  {
+    path: 'nuevo-menu',
+    loadChildren: () => import('./nuevo-menu/nuevo-menu.module').then( m => m.NuevoMenuPageModule)
+  },
+  {
+    path: 'reportar-situa',
+    loadChildren: () => import('./reportar-situa/reportar-situa.module').then( m => m.ReportarSituaPageModule)
+  },
 ];
 
 @NgModule({

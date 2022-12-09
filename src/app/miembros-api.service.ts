@@ -10,6 +10,6 @@ export class MiembrosApiService {
   constructor(public _http: HttpClient) { }
 
   getMemb(){
-    return this._http.get('https://cors-anywhere.herokuapp.com/https://adamix.net/defensa_civil/def/miembros.php');
+    return this._http.get('https://adamix.net/defensa_civil/def/miembros.php');
   }
 }

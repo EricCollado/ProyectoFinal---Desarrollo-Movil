@@ -11,10 +11,14 @@ export class AppComponent {
     { title: 'Servicios', url: '/servicios', icon: 'build'},
     { title: 'Noticias', url: '/noticias', icon: 'newspaper'},
     { title: 'Videos', url: '/videos', icon: 'videocam'},
-    { title: 'Albergues', url: '/albergues', icon: 'home'},
+    { title: 'Albergues', url: '/albergues', icon: 'bed'},
     { title: 'Mapa', url: '/mapa', icon: 'map'},
     { title: 'Medidas', url: '/medidas', icon: 'list'},
     { title: 'Miembros', url: '/miembros', icon: 'people'},
+    { title: 'Voluntario', url: '/voluntario', icon: 'person-add'},
+    { title: 'Acerca de', url: '/acerca-de', icon: 'information-circle'},
+    { title: 'Iniciar Sesion', url: '/login', icon: 'log-in'},
+
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}

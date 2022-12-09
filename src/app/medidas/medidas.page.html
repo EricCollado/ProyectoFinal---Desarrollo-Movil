@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -8,5 +8,10 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <h4>Medidas preventivas de la Defensa Civil</h4>
+    <ion-item *ngFor="let item of resultado" [routerLink]="['/preventivas/' + item.id]">
+      <ion-label>{{item.titulo}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

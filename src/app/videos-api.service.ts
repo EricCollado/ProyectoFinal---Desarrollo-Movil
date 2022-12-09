@@ -10,6 +10,6 @@ export class VideosApiService {
   constructor(public _http: HttpClient) { }
 
   getVideos(){
-    return this._http.get('https://cors-anywhere.herokuapp.com/https://adamix.net/defensa_civil/def/videos.php');
+    return this._http.get('https://adamix.net/defensa_civil/def/videos.php');
   }
 }

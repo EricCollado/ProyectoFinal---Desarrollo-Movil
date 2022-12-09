@@ -8,35 +8,12 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
   <h4>Albergues de la Defensa Civil: </h4>
-  <div>
-
-  <script>
-
-
-  </script>
-
-  <ion-item *ngFor="let item of resultado">
-
-  <ion-card (click)="setPowder(true)" expand="block">{{item.edificio}}</ion-card>
-    <ion-modal [isOpen]="isModalOpen">
-      <ng-template>
-        <ion-header>
-          <ion-toolbar>
-              {{item.edificio}}
-            <ion-buttons slot="end">
-              <ion-button (click)="setPowder(false)">Close</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-         {{item.ciudad}}
-        </ion-content>
-      </ng-template>
-    </ion-modal>
-
+    <ion-item *ngFor="let item of resultado" [routerLink]="['/sitios/' + item.codigo]">
+      <ion-label>{{item.edificio}}</ion-label>
     </ion-item>
-  </div>
+  </ion-list>
   <!-- <ion-list>
     <div align="justify">
     <br><br>
