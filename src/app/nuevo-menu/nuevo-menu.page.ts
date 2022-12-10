@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+/* eslint-disable @typescript-eslint/member-ordering */
+import { Component, OnInit} from '@angular/core';
+import { TokenService } from 'app/token.service';
 
 @Component({
   selector: 'app-nuevo-menu',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevoMenuPage implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private serviToken: TokenService
+  ) { }
+  public token: Array<any> = [];
+
 
   ngOnInit() {
+    this.serviToken.disparadorToken.subscribe(data => {
+      this.token.push(data);
+      console.log('Token: ', this.token);
+    });
   }
 
 }

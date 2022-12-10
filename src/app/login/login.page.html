@@ -13,7 +13,7 @@
       <ion-card-title>Login</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <form [formGroup]="formularioLogin">
+      <form [formGroup]="formularioLogin"(keyup.enter)="ingresar()">
         <ion-item>
           <ion-label position="floating">Cédula</ion-label>
           <ion-input formControlName="cedula"[(ngModel)] = 'cedula'></ion-input>

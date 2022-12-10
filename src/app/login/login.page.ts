@@ -14,6 +14,7 @@ import { AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Inscripcion } from 'app/interfaces/voluntario';
 import { Router } from '@angular/router';
+import { TokenService } from 'app/token.service';
 
 
 @Component({
@@ -35,7 +36,8 @@ export class LoginPage implements OnInit {
     public fb: FormBuilder,
     public alertController: AlertController,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private serviToken: TokenService
     ) {
 
     this.formularioLogin = this.fb.group({
@@ -62,6 +64,7 @@ export class LoginPage implements OnInit {
       if(this.formularioLogin.valid){
       this.mensaje = (users.mensaje);
       this.token = (users.datos.token);
+
 
       console.log(this.token);
       const alert = await this.alertController.create({
@@ -96,6 +99,9 @@ export class LoginPage implements OnInit {
       await alerta.present();
       return;
     }
+    this.serviToken.disparadorToken.emit({
+      data: JSON.stringify(this.token)
+    });
 
   }
 
