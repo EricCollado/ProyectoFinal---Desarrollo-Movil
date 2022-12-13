@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 /* eslint-disable new-parens */
 /* eslint-disable quote-props */
 /* eslint-disable no-trailing-spaces */
@@ -12,7 +13,12 @@ import { AlertController, LoadingController, Platform } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Reportes } from 'app/interfaces/situaciones';
+import { TokenService } from 'app/token.service';
+import { LatLonService } from 'app/lat-lon.service';
+
 const IMAGE_DIR = 'stored-image';
+
 
 interface LocalFile{
   name: string;
@@ -31,26 +37,84 @@ export class ReportarSituaPage implements OnInit {
   public descripcion;
   public latitud;
   public longitud;
+  public foto = '';
   situaForm: FormGroup;
   images: LocalFile[] = [];
+  public mensaje;
 
   constructor(
     private http: HttpClient,
     public alertController: AlertController,
     public fb: FormBuilder,
     private platform: Platform,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private token: TokenService,
+    private coordi: LatLonService,
   ) {
     this.situaForm = this.fb.group({
         'titulo': new FormControl('', Validators.required),
         'descripcion': new FormControl('', Validators.required),
+        'foto': new FormControl(),
         'latitud': new FormControl('', Validators.required),
         'longitud': new FormControl('', Validators.required)
     });
+
   }
 
+
   async ngOnInit() {
-    this.loadFiles();
+    //this.loadFiles();
+  }
+
+  crearReporte(situacion: Reportes){
+     const url = 'https://adamix.net/defensa_civil/def/nueva_situacion.php';
+
+     const data = new FormData();
+     for(const i in situacion){
+       data.append(i, situacion[i]);
+     }
+
+     this.http.post<any>(url, data)
+    .subscribe(async (voluntarios) => {
+      if(this.situaForm.valid){
+      this.mensaje = (voluntarios.mensaje);
+      const alert = await this.alertController.create({
+        header: 'Alert',
+        subHeader: '',
+        message: this.mensaje,
+        buttons: ['OK'],
+      });
+      await alert.present();
+      }
+    });
+  }
+  async guardar(){
+    const reporteNew = {
+      titulo: this.titulo,
+      descripcion: this.descripcion,
+      latitud: this.latitud,
+      longitud: this.longitud,
+      foto: this.foto,
+      token: this.token.token
+    };
+    this.coordi.lat = (this.latitud);
+    this.coordi.lon = (this.longitud);
+
+    this.crearReporte(reporteNew);
+
+    if(this.situaForm.invalid){
+      const alerta = await this.alertController.create({
+        header: 'Datos incompletos',
+        subHeader: '',
+        message: 'Rellena todos los campos',
+        buttons: ['OK'],
+      });
+
+      await alerta.present();
+      return;
+    }
+
+
   }
 
   async loadFiles(){

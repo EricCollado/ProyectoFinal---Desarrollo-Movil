@@ -63,10 +63,8 @@ export class LoginPage implements OnInit {
     .subscribe(async (users) => {
       if(this.formularioLogin.valid){
       this.mensaje = (users.mensaje);
-      this.token = (users.datos.token);
+      this.serviToken.token = (users.datos.token);
 
-
-      console.log(this.token);
       const alert = await this.alertController.create({
         header: 'Alert',
         subHeader: '',
@@ -99,10 +97,6 @@ export class LoginPage implements OnInit {
       await alerta.present();
       return;
     }
-    this.serviToken.disparadorToken.emit({
-      data: JSON.stringify(this.token)
-    });
-
   }
 
 

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref="nuevo-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Situaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-accordion-group *ngFor="let item of mensaje">
+      <ion-accordion value ="first">
+        <ion-item slot="header" color="tertiary">
+          {{item.titulo}}
+        </ion-item>
+        <div class="ion-padding" slot="content">
+         Id: {{item.id}}
+          <br><br>
+         Fecha: {{item.fecha}}
+          <br><br>
+         Titulo: {{item.titulo}}
+          <br><br>
+          Descripcion: {{item.descripcion}}
+          <br><br>
+          Estado: {{item.estado}}
+          <br><br>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+</ion-content>

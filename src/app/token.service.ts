@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/type-annotation-spacing */
 /* eslint-disable @angular-eslint/no-output-native */
 import { Injectable, Output, EventEmitter } from '@angular/core';
 
@@ -7,6 +8,5 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 })
 export class TokenService {
 
-  @Output() disparadorToken: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+public token! : string;
 }

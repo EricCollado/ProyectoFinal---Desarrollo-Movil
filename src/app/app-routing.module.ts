@@ -79,6 +79,18 @@ const routes: Routes = [
     path: 'reportar-situa',
     loadChildren: () => import('./reportar-situa/reportar-situa.module').then( m => m.ReportarSituaPageModule)
   },
+  {
+    path: 'situaciones',
+    loadChildren: () => import('./situaciones/situaciones.module').then( m => m.SituacionesPageModule)
+  },
+  {
+    path: 'mapa-reporte',
+    loadChildren: () => import('./mapa-reporte/mapa-reporte.module').then( m => m.MapaReportePageModule)
+  },
+  {
+    path: 'cambiar-p',
+    loadChildren: () => import('./cambiar-p/cambiar-p.module').then( m => m.CambiarPPageModule)
+  },
 ];
 
 @NgModule({

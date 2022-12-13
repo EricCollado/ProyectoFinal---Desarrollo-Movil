@@ -20,6 +20,14 @@ export class AppComponent {
     { title: 'Iniciar Sesion', url: '/login', icon: 'log-in'},
 
   ];
+  public appPages2 = [
+    { title: 'Noticias', url: '/noticias', icon: 'newspaper'},
+    { title: 'Reporta Situaciones', url: '/reportar-situa', icon: 'videocam'},
+    { title: 'Mis Situaciones', url: '/situaciones', icon: 'bed'},
+    { title: 'Mapa De Situaciones', url: '/mapa-reporte', icon: 'map'},
+    { title: 'Cambiar Contraseña', url: '/cambiar-p', icon: 'list'}
+
+  ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }
