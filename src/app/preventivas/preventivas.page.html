@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref="medidas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Preventivas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of info">
+      <div align="justify">
+      <br>
+      {{item.titulo}}
+      <br><br>
+      {{item.descripcion}}
+      <br><br>
+      <div align="center">
+        <img style="width: 80%; margin:0 auto; max-width: 400px;" src={{item.foto}}>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

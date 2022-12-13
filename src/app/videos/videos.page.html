@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <h4>Videos de la Defensa Civil: </h4>
+  <ion-item *ngFor="let item of resultado">
+    <div align="justify">
+    <br>
+    {{item.fecha}}
+    <br><br>
+    {{item.titulo}}
+    <br><br>
+    {{item.descripcion}}
+    <br><br>
+      <div align="center">
+        <iframe width="100%" height="300" [src]='this.transform(link2,item.link)' title="Defensa Civil: Héroes sin capa de la Republica Dominicana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </ion-item>
+  </ion-list>
+</ion-content>

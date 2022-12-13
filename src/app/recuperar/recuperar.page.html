@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref="albergues"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recuperar contraseña</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formularioRecuperar">
+        <ion-item>
+          <ion-label position="floating">Cédula</ion-label>
+          <ion-input formControlName="cedula"[(ngModel)] = 'cedula'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input formControlName="correo" [(ngModel)] = 'correo'></ion-input>
+        </ion-item>
+      </form>
+      <br>
+
+      <ion-button (click)="recuperar()" expand="block">
+        Ver
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

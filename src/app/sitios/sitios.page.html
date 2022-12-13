@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref="albergues"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Informacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let item of info">
+  <br>
+  Ciudad: {{item.ciudad}}
+  <br><br>
+  Codigo: {{item.codigo}}
+  <br><br>
+  Codigo: {{item.edificio}}
+  <br><br>
+  Coordinador: {{item.coordinador}}
+  <br><br>
+  Télefono: {{item.telefono}}
+  <br><br>
+  Capacidad: {{item.capacidad}}
+  <br><br>
+  Latitud: {{item.lat}}
+  <br><br>
+  Longitud: {{item.lng}}
+
+  </ion-item>
+</ion-list>
+</ion-content>
